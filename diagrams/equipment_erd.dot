@@ -1,0 +1,12 @@
+digraph G {
+rankdir=TB;
+node [shape=box];
+STUDENT [label="STUDENT - student_id (PK) - first_name -last_name - email"];
+CATEGORY [label="CATEGORY - category_id (PK) - category_name"];
+EQUIPMENT [label="EQUIPMENT - equipment_id (PK) - category_id (FK) - equipment_name - serial_number"];
+CHECKOUT [label="CHECKOUT - checkout_id (PK) - student_id (FK) - equipment_id (FK) - checkout_date - due_date - return_date"];
+
+STUDENT -> CHECKOUT [label="makes"];
+CATEGORY -> EQUIPMENT [label="contains"];
+EQUIPMENT -> CHECKOUT [label="appears in"];
+}
